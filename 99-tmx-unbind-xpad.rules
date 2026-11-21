@@ -1,0 +1,3 @@
+# Prevent xpad from binding to TMX wheel by setting driver_override
+# This forces the TMX to bind to the tmx driver instead of xpad
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="044f", ATTRS{idProduct}=="b67e", ATTR{bInterfaceNumber}=="00", RUN+="/bin/sh -c 'echo tmx > /sys$devpath/driver_override'"
